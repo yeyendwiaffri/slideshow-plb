@@ -18,18 +18,18 @@
     border-radius: 14px;
     overflow: hidden;
     box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    background: white;
   }
 
   .slide {
     display: none;
     width: 100%;
-    height: 500px;
   }
 
   .slide img {
     width: 100%;
-    height: 500px;
-    object-fit: cover;
+    height: auto;       /* AUTO HEIGHT */
+    display: block;
   }
 
   .fade {
@@ -38,7 +38,7 @@
   }
 
   @keyframes fadeEffect {
-    from { opacity: 0.3; }
+    from { opacity: 0.2; }
     to { opacity: 1; }
   }
 
@@ -49,7 +49,7 @@
     padding: 12px 22px;
     background: rgba(187,0,0,0.80);
     color: white;
-    font-size: 22px;
+    font-size: 20px;
     border-radius: 12px;
     font-weight: bold;
     backdrop-filter: blur(2px);
@@ -59,46 +59,3 @@
 <body>
 
 <div class="slideshow-container">
-
-  <!-- SLIDE 1 -->
-  <div class="slide fade">
-    <img src="5.png">
-    <div class="title-overlay">Pusat Layanan Bahasa UNTAG Surabaya</div>
-  </div>
-
-  <!-- SLIDE 2 -->
-  <div class="slide fade">
-    <img src="6.png">
-    <div class="title-overlay">Layanan Konsultasi Bahasa Asing</div>
-  </div>
-
-  <!-- SLIDE 3 -->
-  <div class="slide fade">
-    <img src="8.png">
-    <div class="title-overlay">Pelatihan TOEFL & Academic Writing</div>
-  </div>
-
-</div>
-
-<script>
-let slideIndex = 0;
-showSlides();
-
-function showSlides() {
-  let slides = document.getElementsByClassName("slide");
-
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-
-  slideIndex++;
-  if (slideIndex > slides.length) { slideIndex = 1 }
-
-  slides[slideIndex - 1].style.display = "block";
-
-  setTimeout(showSlides, 3500);
-}
-</script>
-
-</body>
-</html>
