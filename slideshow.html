@@ -1,1 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Slideshow Pusat Layanan Bahasa UNTAG Surabaya</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: #fafafa;
+    font-family: Arial, sans-serif;
+  }
+
+  .slideshow-container {
+    position: relative;
+    max-width: 900px;
+    margin: 30px auto;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    background: white;
+  }
+
+  .slide {
+    display: none;
+    width: 100%;
+  }
+
+  .slide img {
+    width: 100%;
+    height: auto;  /* AUTO HEIGHT */
+    display: block;
+  }
+
+  .fade {
+    animation-name: fadeEffect;
+    animation-duration: 1.5s;
+  }
+
+  @keyframes fadeEffect {
+    from { opacity: 0.2; }
+    to { opacity: 1; }
+  }
+
+  .title-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    padding: 12px 22px;
+    background: rgba(187,0,0,0.80);
+    color: white;
+    font-size: 20px;
+    border-radius: 12px;
+    font-weight: bold;
+    backdrop-filter: blur(2px);
+  }
+</style>
+</head>
+<body>
+
+<div class="slideshow-container">
+
+  <div class="slide fade">
+    <img src="5.png">
+    <div class="title-overlay">Pusat Layanan Bahasa UNTAG Surabaya</div>
+  </div>
+
+  <div class="slide fade">
+    <img src="6.png">
+    <div class="title-overlay">Layanan Konsultasi Bahasa Asing</div>
+  </div>
+
+  <div class="slide fade">
+    <img src="8.png">
+    <div class="title-overlay">Pelatihan TOEFL & Academic Writing</div>
+  </div>
+
+</div>
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let slides = document.getElementsByClassName("slide");
+
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  slideIndex++;
+  if (slideIndex > slides.length) { slideIndex = 1; }
+
+  slides[slideIndex - 1].style.display = "block";
+
+  setTimeout(showSlides, 3500);
+}
+</script>
+
+</body>
+</html>
 
